@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>About — Rachel Whitmore · Faith-Based Life Coach</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<style>
+:root{
+  --bg:#f8f5f4;--bg-warm:#f2ebe8;--bg-section:#ebe0dc;--white:#ffffff;
+  --deep:#4a3a2e;--mid:#b87a5a;--soft:#d09a7a;--pale:#e8c8b8;
+  --wash:rgba(184,122,90,.08);--gold:#c4922a;--gold-pale:#f0e0c0;
+  --text:#3a2e28;--text-mid:#8a6a5a;--text-light:#aa9a8a;
+  --border:#ddd4d0;--border-lt:#ede4e0;
+  --serif:'Cormorant Garamond',serif;--sans:'Jost',sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+body{max-width:1440px;width:100%;margin:0 auto;background:var(--bg);color:var(--text);font-family:var(--sans);font-weight:300;-webkit-font-smoothing:antialiased;}
+.lbl{display:inline-flex;align-items:center;gap:10px;font-size:10px;font-weight:600;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold);}.lbl::before{content:'';width:16px;height:1.5px;background:var(--gold);display:block;}
+.lbl-m{display:inline-flex;align-items:center;gap:10px;font-size:10px;font-weight:600;letter-spacing:2.5px;text-transform:uppercase;color:var(--mid);}.lbl-m::before{content:'';width:16px;height:1.5px;background:var(--soft);display:block;}
+.lbl-lt{display:inline-flex;align-items:center;gap:10px;font-size:10px;font-weight:600;letter-spacing:2.5px;text-transform:uppercase;color:rgba(255,255,255,.5);}.lbl-lt::before{content:'';width:16px;height:1.5px;background:rgba(255,255,255,.3);display:block;}
+.h2{font-family:var(--serif);font-size:48px;font-weight:300;line-height:1.1;color:var(--deep);}.h2 em{font-style:italic;color:var(--mid);}
+.h2-lt{font-family:var(--serif);font-size:48px;font-weight:300;line-height:1.1;color:#fff;}.h2-lt em{font-style:italic;color:var(--pale);}
+.h3{font-family:var(--serif);font-size:28px;font-weight:300;line-height:1.2;color:var(--deep);}.h3 em{font-style:italic;color:var(--mid);}
+.body{font-family:var(--sans);font-size:15px;font-weight:300;line-height:1.8;color:var(--text-mid);}
+.btn{display:inline-flex;align-items:center;gap:8px;font-family:var(--sans);font-size:13px;font-weight:500;padding:14px 28px;border-radius:2px;text-decoration:none;cursor:pointer;border:none;letter-spacing:.3px;}
+.btn-dark{background:var(--deep);color:#fff;}.btn-mid{background:var(--mid);color:#fff;}.btn-out{background:transparent;color:var(--deep);border:1.5px solid var(--border);}.btn-wh{background:#fff;color:var(--deep);}.btn-ghost{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.25);}
+
+/* Navigation */
+nav{width:100%;height:68px;background:var(--white);border-bottom:1px solid var(--border-lt);display:flex;align-items:center;}
+.nav-in{width:100%;padding:0 64px;display:flex;align-items:center;justify-content:space-between;}
+.nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none;}
+.nav-mark{width:32px;height:32px;background:var(--deep);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:serif;font-size:14px;color:var(--gold);}
+.nav-name{font-family:var(--serif);font-size:18px;font-weight:300;color:var(--deep);}.nav-name em{font-style:italic;color:var(--mid);}
+.nav-links{display:flex;align-items:center;gap:28px;list-style:none;}
+.nav-links a{font-size:13px;color:var(--text-mid);text-decoration:none;}.nav-links a.active{color:var(--deep);font-weight:500;}
+.nav-cta{background:var(--deep)!important;color:#fff!important;padding:10px 20px;border-radius:2px;font-weight:500!important;font-size:12px!important;}
+
+/* Hero */
+.hero{width:100%;background:var(--white);padding:80px 64px 60px;display:grid;grid-template-columns:1fr 520px;gap:60px;align-items:start;}
+.hero-content{max-width:600px;}
+.hero-h1{font-family:var(--serif);font-size:64px;font-weight:300;line-height:.95;color:var(--deep);margin-bottom:8px;}.hero-h1 em{font-style:italic;color:var(--mid);}
+.hero-sub{font-family:var(--serif);font-style:italic;font-size:24px;color:var(--text-light);margin-bottom:24px;}
+.hero-desc{font-size:14px;color:var(--text-mid);line-height:1.75;margin-bottom:28px;max-width:480px;}
+.hero-img{background:var(--mid);border-radius:4px;aspect-ratio:1/1.1;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:12px;position:relative;overflow:hidden;box-shadow:20px 20px 0 var(--pale),0 36px 72px rgba(0,0,0,.14);}
+.hero-img::before{content:'';position:absolute;inset:0;background:linear-gradient(160deg,rgba(74,58,46,.12) 0%,transparent 45%,rgba(74,58,46,.52) 100%);z-index:1;pointer-events:none;}
+.hero-img-icon{font-size:48px;color:rgba(255,255,255,.15);}
+.hero-img-label{font-family:var(--serif);font-style:italic;font-size:12px;color:rgba(255,255,255,.35);}
+
+/* Stats Row */
+.stats-row{width:100%;background:var(--white);padding:0 64px 60px;display:flex;gap:40px;}
+.stat-box{display:flex;align-items:baseline;gap:8px;}
+.stat-n{font-family:var(--serif);font-size:36px;font-weight:300;color:var(--deep);}.stat-n sup{font-size:.5em;color:var(--mid);}
+.stat-l{font-size:10px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--text-light);}
+
+/* About */
+.about{width:100%;background:var(--bg-warm);padding:80px 64px;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;border-top:1px solid var(--border);border-bottom:1px solid var(--border);}
+.scripture-box{background:var(--deep);border-radius:4px;padding:36px 32px;position:relative;overflow:hidden;margin-bottom:20px;}
+.scripture-box::before{content:'"';position:absolute;top:-16px;left:8px;font-family:var(--serif);font-size:140px;color:rgba(255,255,255,.03);line-height:1;}
+.sc-ey{font-size:9px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--gold);opacity:.7;margin-bottom:14px;display:flex;align-items:center;gap:6px;}.sc-ey::before{content:'✝';font-size:10px;}
+.sc-text{font-family:var(--serif);font-style:italic;font-size:18px;font-weight:300;color:#fff;line-height:1.5;margin-bottom:10px;position:relative;z-index:1;}
+.sc-ref{font-size:9px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold);opacity:.5;}
+.chips-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+.chip{background:var(--white);border:1px solid var(--border);border-radius:3px;padding:14px 16px;}
+.chip-n{font-family:var(--serif);font-size:24px;font-weight:300;color:var(--deep);line-height:1;}.chip-n sup{font-size:.5em;color:var(--gold);}
+.chip-l{font-size:9px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--text-light);margin-top:3px;}
+.pull-quote{margin:20px 0;padding:18px 22px;background:var(--white);border-left:3px solid var(--gold);border-radius:0 3px 3px 0;}
+.pull-quote p{font-family:var(--serif);font-style:italic;font-size:16px;color:var(--deep);line-height:1.55;}
+.about-sig{font-family:var(--serif);font-style:italic;font-size:22px;color:var(--mid);margin:20px 0;}
+
+/* Values - Dark */
+.values{width:100%;background:var(--deep);padding:80px 64px;position:relative;overflow:hidden;}
+.values::before{content:'✝';position:absolute;bottom:-40px;right:-20px;font-size:280px;color:rgba(255,255,255,.02);font-family:serif;line-height:1;pointer-events:none;}
+.values-header{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:48px;}
+.values-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(255,255,255,.06);}
+.value-card{background:var(--deep);padding:40px 36px;display:flex;flex-direction:column;position:relative;}
+.value-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;}
+.value-card:nth-child(1)::before{background:var(--gold);}
+.value-card:nth-child(2)::before{background:var(--mid);}
+.value-card:nth-child(3)::before{background:var(--pale);}
+.value-n{font-family:var(--serif);font-size:64px;font-weight:300;color:rgba(255,255,255,.04);line-height:1;margin-bottom:16px;}
+.value-icon{width:40px;height:40px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:18px;margin-bottom:20px;}
+.value-title{font-family:var(--serif);font-size:22px;font-weight:300;color:#fff;line-height:1.2;margin-bottom:12px;}
+.value-desc{font-size:13px;line-height:1.75;color:rgba(255,255,255,.38);}
+
+/* Credentials */
+.creds{width:100%;background:var(--white);padding:80px 64px;}
+.creds-header{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:48px;}
+.creds-grid{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--border);}
+.cred-item{padding:40px 32px;border-right:1px solid var(--border-lt);position:relative;background:var(--bg);}
+.cred-item:last-child{border-right:none;}
+.cred-item::before{content:'';position:absolute;top:0;left:32px;width:28px;height:2px;background:var(--soft);}
+.cred-n{font-family:var(--serif);font-size:72px;font-weight:300;color:var(--pale);line-height:1;margin-bottom:12px;}
+.cred-cross{position:absolute;top:24px;right:24px;font-size:14px;color:var(--pale);font-family:serif;}
+.cred-title{font-family:var(--serif);font-size:18px;font-weight:400;color:var(--deep);line-height:1.25;margin-bottom:12px;}.cred-title em{font-style:italic;color:var(--mid);}
+.cred-body{font-size:12.5px;line-height:1.7;color:var(--text-mid);}
+
+/* CTA */
+.cta{width:100%;display:grid;grid-template-columns:1fr 1fr;min-height:400px;}
+.cta-left{background:var(--mid);padding:72px 64px;display:flex;flex-direction:column;justify-content:center;position:relative;overflow:hidden;}
+.cta-left::before{content:'✝';position:absolute;bottom:-40px;right:-10px;font-size:240px;color:rgba(255,255,255,.04);font-family:serif;line-height:1;pointer-events:none;}
+.cta-left::after{content:'';position:absolute;top:-80px;left:-80px;width:280px;height:280px;border-radius:50%;background:rgba(0,0,0,.08);pointer-events:none;}
+.cta-h{font-family:var(--serif);font-size:44px;font-weight:300;line-height:1.05;color:#fff;margin-bottom:18px;position:relative;z-index:1;}.cta-h em{font-style:italic;opacity:.6;}
+.cta-sub{font-size:14px;line-height:1.75;color:rgba(255,255,255,.55);max-width:340px;margin-bottom:32px;position:relative;z-index:1;}
+.cta-btns{display:flex;gap:12px;position:relative;z-index:1;}
+.cta-right{background:var(--bg);border-left:1px solid var(--border);padding:72px 56px;display:flex;flex-direction:column;justify-content:center;gap:24px;}
+.cta-right-intro{font-family:var(--serif);font-style:italic;font-size:15px;color:var(--text-mid);}
+.checklist{list-style:none;display:flex;flex-direction:column;gap:14px;}
+.checklist li{display:flex;align-items:flex-start;gap:12px;font-size:14px;color:var(--text-mid);line-height:1.5;}
+.checklist li::before{content:'✓';width:22px;height:22px;background:var(--wash);border:1.5px solid var(--pale);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:700;color:var(--mid);flex-shrink:0;margin-top:1px;}
+.cta-note{padding:16px 18px;background:var(--white);border-radius:3px;border:1px solid var(--border);}
+.cta-note p{font-size:12.5px;color:var(--text-mid);line-height:1.65;}.cta-note strong{font-weight:600;color:var(--deep);}
+
+/* Footer */
+footer{width:100%;background:var(--deep);border-top:1px solid rgba(255,255,255,.04);}
+.footer-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:48px;padding:56px 64px 44px;}
+.footer-logo-row{display:flex;align-items:center;gap:10px;margin-bottom:12px;}
+.footer-mark{width:32px;height:32px;background:var(--mid);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:serif;font-size:13px;color:var(--gold);}
+.footer-name{font-family:var(--serif);font-size:18px;font-weight:300;color:#fff;}.footer-name em{font-style:italic;color:var(--pale);}
+.footer-tag{font-size:12.5px;color:rgba(255,255,255,.3);line-height:1.7;max-width:220px;margin-bottom:20px;}
+.footer-verse{padding:12px 14px;border-left:2px solid rgba(255,255,255,.1);}.footer-verse p{font-family:var(--serif);font-style:italic;font-size:12px;color:rgba(255,255,255,.28);line-height:1.6;}
+.fcol-hd{font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.2);margin-bottom:16px;}
+.flinks{list-style:none;display:flex;flex-direction:column;gap:10px;}.flinks a{font-size:13px;color:rgba(255,255,255,.42);text-decoration:none;}
+.footer-bot{padding:18px 64px;border-top:1px solid rgba(255,255,255,.05);display:flex;justify-content:space-between;align-items:center;}
+.footer-bot p{font-size:11px;color:rgba(255,255,255,.2);}.footer-powered{font-size:11px;color:rgba(255,255,255,.15);}.footer-powered strong{color:rgba(255,255,255,.35);font-weight:500;}
+
+/* ================================================
+   MOBILE RESPONSIVE — all rachel pages
+   Breakpoints: 900px (tablet) | 540px (phone)
+   ================================================ */
+
+/* ── Tablet: ≤ 900px ─────────────────────────── */
+@media(max-width:900px){
+
+  /* ── Body & shared layout ── */
+  body{overflow-x:hidden;}
+
+  /* ── Navigation ── */
+  nav{width:100%!important;}
+  .nav-in{padding:0 24px;}
+  .nav-links{display:none;}
+
+  /* ── Hero (all pages with a hero section) ── */
+  .hero{
+    grid-template-columns:1fr!important;
+    padding:48px 24px 36px!important;
+    gap:32px!important;
+    width:100%!important;
+  }
+  .hero-content{max-width:100%;}
+  .hero-h1{font-size:46px!important;}
+  .hero-sub{font-size:22px!important;}
+  .hero-img{
+    aspect-ratio:16/9!important;
+    box-shadow:10px 10px 0 var(--pale),0 20px 40px rgba(0,0,0,.12)!important;
+  }
+  .hero-btns{flex-wrap:wrap;}
+
+  /* ── Stats row ── */
+  .stats-row{
+    width:100%!important;
+    padding:0 24px 40px!important;
+    flex-wrap:wrap;
+    gap:20px!important;
+  }
+
+  /* ── Pillars (4-col → 2-col) ── */
+  .pillars{
+    width:100%!important;
+    grid-template-columns:repeat(2,1fr)!important;
+  }
+
+  /* ── About / scripture left + content right ── */
+  .about{
+    width:100%!important;
+    grid-template-columns:1fr!important;
+    padding:60px 24px!important;
+    gap:40px!important;
+  }
+
+  /* ── Programs dark section ── */
+  .programs{width:100%!important;padding:60px 24px!important;}
+  .programs-header{
+    flex-direction:column!important;
+    gap:20px!important;
+    align-items:flex-start!important;
+    margin-bottom:32px!important;
+  }
+  .programs-header-right{max-width:100%!important;text-align:left!important;}
+  .programs-grid{grid-template-columns:1fr!important;gap:0!important;}
+  .prog-card{padding:32px 24px!important;}
+
+  /* ── Path section (4-col → 2-col) ── */
+  .path{width:100%!important;padding:60px 24px!important;}
+  .path-header{
+    flex-direction:column!important;
+    gap:20px!important;
+    align-items:flex-start!important;
+    margin-bottom:32px!important;
+  }
+  .path-header-right{max-width:100%!important;}
+  .path-grid{grid-template-columns:repeat(2,1fr)!important;}
+
+  /* ── Testimonials strip ── */
+  .testimonials{width:100%!important;padding:60px 24px!important;}
+  .test-header{
+    flex-direction:column!important;
+    gap:20px!important;
+    align-items:flex-start!important;
+  }
+  .test-header-right{align-items:flex-start!important;}
+  .test-grid{grid-template-columns:1fr!important;gap:0!important;}
+
+  /* ── CTA split ── */
+  .cta{width:100%!important;grid-template-columns:1fr!important;}
+  .cta-left{padding:56px 24px!important;}
+  .cta-right{
+    padding:48px 24px!important;
+    border-left:none!important;
+    border-top:1px solid var(--border)!important;
+  }
+  .cta-h{font-size:36px!important;}
+
+  /* ── Footer ── */
+  footer{width:100%!important;}
+  .footer-grid{
+    grid-template-columns:repeat(2,1fr)!important;
+    padding:40px 24px 32px!important;
+    gap:32px!important;
+  }
+  .footer-bot{
+    padding:16px 24px!important;
+    flex-direction:column!important;
+    gap:8px!important;
+    text-align:center!important;
+  }
+
+  /* ══ PAGE-SPECIFIC ══════════════════════════ */
+
+  /* ── About page: values-grid (3-col → 2-col), creds-grid (4-col → 2-col) ── */
+  .values-grid{grid-template-columns:repeat(2,1fr)!important;}
+  .value-card{padding:28px 20px!important;}
+  .creds-grid{grid-template-columns:repeat(2,1fr)!important;}
+  .cred-item{padding:28px 20px!important;}
+
+  /* ── Work-with-me: compare table scroll ── */
+  .compare{width:100%!important;padding:60px 24px!important;overflow-x:auto;}
+  .compare-table{min-width:560px;}
+
+  /* ── VSL page ── */
+  .vsl-hero{
+    width:100%!important;
+    padding:60px 24px 36px!important;
+  }
+  .vsl-box{
+    width:100%!important;
+    max-width:100%!important;
+    padding:0!important;
+  }
+  .learn{width:100%!important;padding:60px 24px!important;}
+  .learn-grid{grid-template-columns:repeat(2,1fr)!important;gap:0!important;}
+  .learn-item{padding:28px 20px!important;}
+  .about-coach{
+    width:100%!important;
+    grid-template-columns:1fr!important;
+    padding:60px 24px!important;
+    gap:40px!important;
+  }
+  .coach-img{width:100%!important;aspect-ratio:4/3!important;max-height:380px!important;}
+
+  /* ── Book page ── */
+  .book-section{
+    width:100%!important;
+    grid-template-columns:1fr!important;
+    padding:60px 24px!important;
+    gap:40px!important;
+  }
+  .book-embed{min-height:400px!important;}
+  .expect{width:100%!important;padding:60px 24px!important;}
+  .expect-grid{grid-template-columns:repeat(2,1fr)!important;gap:0!important;}
+  .expect-item{padding:28px 20px!important;}
+
+  /* ── FAQ page: sidebar stacks above content ── */
+  .faq-section{
+    width:100%!important;
+    grid-template-columns:1fr!important;
+    padding:60px 24px!important;
+    gap:32px!important;
+  }
+  .faq-sidebar{position:static!important;top:auto!important;}
+
+  /* ── Testimonials page: featured card ── */
+  .featured{width:100%!important;padding:60px 24px!important;}
+  .featured-card{
+    grid-template-columns:1fr!important;
+    gap:32px!important;
+  }
+  .fc-img{max-height:360px!important;}
+
+  /* ── Contact page ── */
+  .contact-section{
+    width:100%!important;
+    grid-template-columns:1fr!important;
+    padding:60px 24px!important;
+    gap:40px!important;
+  }
+  .form-box{padding:32px 24px!important;}
+  .ways{width:100%!important;padding:60px 24px!important;}
+  .ways-grid{grid-template-columns:repeat(2,1fr)!important;gap:0!important;}
+  .way-item{padding:28px 20px!important;}
+
+  /* ── Legal page: sticky sidebar stacks above content ── */
+  .legal-section{
+    width:100%!important;
+    grid-template-columns:1fr!important;
+    padding:60px 24px!important;
+    gap:32px!important;
+  }
+  .legal-sidebar{position:static!important;top:auto!important;}
+  .legal-content{padding:32px 24px!important;}
+
+  /* ── Typography scale-down ── */
+  .h2,.h2-lt{font-size:38px!important;}
+  .h1{font-size:46px!important;}
+}
+
+/* ── Phone: ≤ 540px ──────────────────────────── */
+@media(max-width:540px){
+
+  /* ── Navigation ── */
+  .nav-in{padding:0 16px!important;}
+
+  /* ── Hero ── */
+  .hero{padding:32px 16px 28px!important;}
+  .hero-h1{font-size:34px!important;line-height:1.05!important;}
+  .hero-sub{font-size:18px!important;}
+  .hero-desc{font-size:13px!important;}
+  .hero-btns{flex-direction:column!important;gap:10px!important;}
+  .hero-btns .btn{width:100%!important;justify-content:center!important;}
+  .hero-img{
+    aspect-ratio:4/3!important;
+    box-shadow:8px 8px 0 var(--pale),0 16px 32px rgba(0,0,0,.12)!important;
+  }
+
+  /* ── Stats ── */
+  .stats-row{padding:0 16px 28px!important;}
+
+  /* ── Pillars → 1 col ── */
+  .pillars{grid-template-columns:1fr!important;}
+  .pillar{padding:20px 16px!important;border-right:none!important;border-bottom:1px solid var(--border-lt)!important;}
+
+  /* ── About ── */
+  .about{padding:40px 16px!important;}
+  .chips-grid{grid-template-columns:1fr 1fr!important;}
+
+  /* ── Programs ── */
+  .programs{padding:40px 16px!important;}
+  .prog-card{padding:24px 16px!important;}
+
+  /* ── Path → 1 col ── */
+  .path{padding:40px 16px!important;}
+  .path-grid{grid-template-columns:1fr!important;}
+  .path-step{
+    padding:24px 16px!important;
+    border-right:none!important;
+    border-bottom:1px solid var(--border-lt)!important;
+  }
+
+  /* ── Testimonials ── */
+  .testimonials{padding:40px 16px!important;}
+  .tcard{padding:24px 16px!important;}
+
+  /* ── CTA ── */
+  .cta-left,.cta-right{padding:36px 16px!important;}
+  .cta-h{font-size:26px!important;}
+  .cta-btns{flex-direction:column!important;gap:10px!important;}
+  .cta-btns .btn{width:100%!important;justify-content:center!important;}
+
+  /* ── Footer → 1 col ── */
+  .footer-grid{grid-template-columns:1fr!important;padding:28px 16px 20px!important;}
+  .footer-bot{padding:12px 16px!important;}
+
+  /* ── Typography ── */
+  .h2,.h2-lt{font-size:28px!important;}
+  .h1{font-size:32px!important;}
+  .hero-h1{font-size:28px!important;}
+
+  /* ── About page ── */
+  .values-grid{grid-template-columns:1fr!important;}
+  .value-card{padding:20px 16px!important;}
+  .creds-grid{grid-template-columns:1fr 1fr!important;}
+  .cred-item{padding:20px 16px!important;}
+
+  /* ── VSL page ── */
+  .vsl-hero{padding:40px 16px 28px!important;}
+  .learn{padding:40px 16px!important;}
+  .learn-grid{grid-template-columns:1fr!important;}
+  .about-coach{padding:40px 16px!important;}
+
+  /* ── Book page ── */
+  .book-section{padding:40px 16px!important;}
+  .expect{padding:40px 16px!important;}
+  .expect-grid{grid-template-columns:1fr!important;}
+  .expect-item{padding:20px 16px!important;}
+
+  /* ── FAQ page ── */
+  .faq-section{padding:40px 16px!important;}
+  .faq-q{padding:18px 16px!important;}
+  .faq-a{padding:0 16px 18px!important;}
+
+  /* ── Testimonials page ── */
+  .featured{padding:40px 16px!important;}
+  .fc-img{max-height:260px!important;}
+
+  /* ── Contact page ── */
+  .contact-section{padding:40px 16px!important;}
+  .form-box{padding:24px 16px!important;}
+  .ways{padding:40px 16px!important;}
+  .ways-grid{grid-template-columns:1fr!important;}
+  .way-item{padding:20px 16px!important;}
+
+  /* ── Legal page ── */
+  .legal-section{padding:40px 16px!important;}
+  .legal-content{padding:24px 16px!important;}
+}
+</style>
+</head>
+<body>
+
+<!-- Navigation -->
+<nav>
+  <div class="nav-in">
+    <a class="nav-logo" href="index.html">
+      <div class="nav-mark" style="overflow:hidden;padding:0;"><img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&h=400&fit=crop&q=80" style="width:100%;height:100%;object-fit:cover;object-position:top center;border-radius:50%;display:block;"></div>
+      <div class="nav-name">Rachel <em>Whitmore</em></div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html" class="active">About</a></li>
+      <li><a href="work-with-me.html">Work With Me</a></li>
+      <li><a href="vsl.html">Free Training</a></li>
+      <li><a href="testimonials.html">Stories</a></li>
+      <li><a href="faq.html">FAQ</a></li>
+      <li><a href="book.html" class="nav-cta">Book a Session</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- Hero Section -->
+<section class="hero">
+  <div class="hero-content">
+    <div class="lbl" style="margin-bottom:24px;">My Story</div>
+    <h1 class="hero-h1">I Was the Pastor's<br>Daughter Who<br><em>Never Needed Anything.</em></h1>
+    <p class="hero-sub">Until the performance finally broke me open — and God met me there.</p>
+    <p class="hero-desc">I didn't come to this work as a professional who studied a method. I came as a woman who lived through the wreckage of a performance-based faith — and found her way, slowly and tenderly, to something real. That's what I bring to every single session.</p>
+    <div style="display:flex;gap:12px;">
+      <a href="book.html" class="btn btn-mid">Book a Discovery Call</a>
+      <a href="work-with-me.html" class="btn btn-out">See How We Work</a>
+    </div>
+  </div>
+  <div class="hero-img">
+    <img src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?w=900&h=1000&fit=crop&q=80" alt="Rachel Whitmore" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;object-position:center top;">
+  </div>
+</section>
+
+<!-- Stats Row -->
+<section class="stats-row">
+  <div class="stat-box">
+    <div class="stat-n">200<sup>+</sup></div>
+    <div class="stat-l">Women Coached</div>
+  </div>
+  <div class="stat-box">
+    <div class="stat-n">5.0<sup>★</sup></div>
+    <div class="stat-l">Average Rating</div>
+  </div>
+  <div class="stat-box">
+    <div class="stat-n">7</div>
+    <div class="stat-l">Years Experience</div>
+  </div>
+  <div class="stat-box">
+    <div class="stat-n">40<sup>K+</sup></div>
+    <div class="stat-l">Podcast Downloads</div>
+  </div>
+</section>
+
+<!-- About Section with Scripture -->
+<section class="about">
+  <div>
+    <div class="scripture-box">
+      <div class="sc-ey">Scripture</div>
+      <p class="sc-text">"Therefore, if anyone is in Christ, the new creation has come: The old has gone, the new is here!"</p>
+      <p class="sc-ref">— 2 Corinthians 5:17</p>
+    </div>
+    <div class="chips-grid">
+      <div class="chip">
+        <div class="chip-n">200<sup>+</sup></div>
+        <div class="chip-l">Women Coached</div>
+      </div>
+      <div class="chip">
+        <div class="chip-n">5.0<sup>★</sup></div>
+        <div class="chip-l">Client Rating</div>
+      </div>
+      <div class="chip">
+        <div class="chip-n">40<sup>K</sup></div>
+        <div class="chip-l">Podcast Downloads</div>
+      </div>
+      <div class="chip">
+        <div class="chip-n">7</div>
+        <div class="chip-l">Years Experience</div>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div class="lbl-m" style="margin-bottom:18px;">My Story</div>
+    <h2 class="h2" style="margin-bottom:20px;">The Breaking Point<br>That Finally<br><em>Set Me Free.</em></h2>
+    <div class="pull-quote">
+      <p>"I sat on my pantry floor and cried for an hour while my children played just three feet away. That was the moment I finally admitted: performing had stopped working. Everything changed after that afternoon."</p>
+    </div>
+    <p class="body" style="margin-bottom:16px;">I was raised in the church — the pastor's daughter who learned before she could articulate it that love was something you earned. Good grades, worship team, first to serve and last to need anything. I perfected the performance. I genuinely, deeply loved Jesus. But by my early thirties — wife, mother of two, ministry-adjacent on every side — I was quietly breaking. Angry at my children at the wrong moments. Numb in my marriage in a way I couldn't explain. Sitting in church with tears on my face from the music and feeling absolutely nothing when I opened my Bible alone.</p>
+    <p class="body" style="margin-bottom:20px;">My Instagram looked beautiful. I was disappearing inside it. Then came the pandemic, a season of forced stillness, and a courageous therapist who asked me questions no one had ever asked before. And then — slowly, tenderly, in ways I could not have manufactured — a God who turned out to be far more gentle than everything I had been taught. I've spent the years since doing the deep work: IFS and inner child healing, nervous system restoration, attachment theory, and a total re-encounter with the grace-rooted gospel that actually sets you free. I didn't set out to become a coach. I set out to survive. And when I came out the other side, I found I couldn't keep any of it to myself.</p>
+    <div class="about-sig">— Rachel</div>
+    <a href="work-with-me.html" class="btn btn-dark">See How We Work Together</a>
+  </div>
+</section>
+
+<!-- Values Section - Dark -->
+<section class="values">
+  <div class="values-header">
+    <div>
+      <div class="lbl-lt" style="margin-bottom:16px;">What I Believe</div>
+      <h2 class="h2-lt">The Foundations<br>I <em>Build From.</em></h2>
+    </div>
+    <div style="max-width:280px;text-align:right;">
+      <p style="font-size:13px;color:rgba(255,255,255,.35);line-height:1.7;">Every session, every program, every conversation is grounded in these three unchanging convictions.</p>
+    </div>
+  </div>
+  <div class="values-grid">
+    <div class="value-card">
+      <div class="value-n">01</div>
+      <div class="value-icon">🕊</div>
+      <div class="value-title">The Gospel Is the Center</div>
+      <p class="value-desc">Not a backdrop, not a footnote — the actual center. A grace-rooted encounter with the Father-heart of God is what changes people at the root. Everything I do is anchored there.</p>
+    </div>
+    <div class="value-card">
+      <div class="value-n">02</div>
+      <div class="value-icon">🌿</div>
+      <div class="value-title">Slow Is Faster</div>
+      <p class="value-desc">Real transformation doesn't happen at the pace of hustle. It happens in the slow, patient places — in the body, in the nervous system, in the parts that were hurt long before anyone had words for it.</p>
+    </div>
+    <div class="value-card">
+      <div class="value-n">03</div>
+      <div class="value-icon">🔥</div>
+      <div class="value-title">Honesty Is the Work</div>
+      <p class="value-desc">I've walked this path myself. I don't teach anything I haven't lived. My own brokenness — and the healing that followed — is the most important thing I bring to every session.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Credentials Section -->
+<section class="creds">
+  <div class="creds-header">
+    <div>
+      <div class="lbl-m" style="margin-bottom:16px;">Training & Approach</div>
+      <h2 class="h2">Equipped for the<br><em>Work That Matters.</em></h2>
+    </div>
+    <div style="max-width:320px;">
+      <p class="body">I believe in going deep — in my own healing and in how I'm equipped to hold yours. Here's what I bring to every session.</p>
+    </div>
+  </div>
+  <div class="creds-grid">
+    <div class="cred-item">
+      <div class="cred-n">01</div>
+      <span class="cred-cross">✝</span>
+      <div class="cred-title">Certified <em>Coach</em></div>
+      <p class="cred-body">Professionally trained in faith-based coaching methodology, inner child and parts work (IFS), nervous system regulation, and attachment-based healing.</p>
+    </div>
+    <div class="cred-item">
+      <div class="cred-n">02</div>
+      <span class="cred-cross">✝</span>
+      <div class="cred-title">Proven <em>Framework</em></div>
+      <p class="cred-body">A clear, battle-tested four-phase process — Slow Down, See the Story, Meet the Real Father, Integrate — refined through hundreds of hours of real client work.</p>
+    </div>
+    <div class="cred-item">
+      <div class="cred-n">03</div>
+      <span class="cred-cross">✝</span>
+      <div class="cred-title">Real <em>Results</em></div>
+      <p class="cred-body">Hundreds of exhausted Christian women have walked this journey and come out the other side genuinely free — not just more disciplined, but actually different at the root.</p>
+    </div>
+    <div class="cred-item">
+      <div class="cred-n">04</div>
+      <span class="cred-cross">✝</span>
+      <div class="cred-title">Community <em>Rooted</em></div>
+      <p class="cred-body">Built on real relationship — with God, with a growing community of women walking toward wholeness, and with trusted therapists and teachers I work alongside.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CTA Section -->
+<section class="cta">
+  <div class="cta-left">
+    <div class="lbl-lt" style="margin-bottom:18px;">Your Next Step</div>
+    <h2 class="cta-h">Something in You<br>Led You <em>Here.</em></h2>
+    <p class="cta-sub">A free 45-minute conversation — unhurried, honest, no performance required. Just space to talk about where you are and what you're longing for on the other side.</p>
+    <div class="cta-btns">
+      <a href="book.html" class="btn btn-wh">Book a Free Call</a>
+      <a href="work-with-me.html" class="btn btn-ghost">See Programs</a>
+    </div>
+  </div>
+  <div class="cta-right">
+    <div class="cta-right-intro">In our call, you'll get honest clarity on…</div>
+    <ul class="checklist">
+      <li>What's actually keeping you stuck beneath the surface — beneath the exhaustion and the performing</li>
+      <li>What a realistic, grace-rooted path to lasting freedom could look like for you</li>
+      <li>Which program or offering is the right fit for your season and situation</li>
+      <li>Whether we're the right match to walk this work together honestly</li>
+    </ul>
+    <div class="cta-note">
+      <p><strong>Zero pressure. Zero obligation.</strong> If it's not the right fit, I'll tell you honestly and point you somewhere better — your healing matters more than my business.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="footer-grid">
+    <div>
+      <div class="footer-logo-row">
+        <div class="footer-mark">✝</div>
+        <div class="footer-name">Rachel <em>Whitmore</em></div>
+      </div>
+      <p class="footer-tag">Faith-based coaching for the exhausted Christian woman who's ready to stop performing and come home to herself.</p>
+      <div class="footer-verse">
+        <p>"You will know the truth, and the truth will set you free." — John 8:32</p>
+      </div>
+    </div>
+    <div>
+      <div class="fcol-hd">Navigate</div>
+      <ul class="flinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="work-with-me.html">Work With Me</a></li>
+        <li><a href="testimonials.html">Stories</a></li>
+        <li><a href="book.html">Book a Session</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="fcol-hd">Programs</div>
+      <ul class="flinks">
+        <li><a href="work-with-me.html">1:1 Coaching</a></li>
+        <li><a href="work-with-me.html">Group Program</a></li>
+        <li><a href="work-with-me.html">Online Course</a></li>
+        <li><a href="vsl.html">Free Training</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="fcol-hd">Legal</div>
+      <ul class="flinks">
+        <li><a href="legal.html">Privacy Policy</a></li>
+        <li><a href="legal.html">Terms of Service</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bot">
+    <p>© 2026 Rachel Whitmore. All rights reserved.</p>
+    <div class="footer-powered">Powered by <strong>Alive & Free Consulting</strong></div>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,845 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Home — Rachel Whitmore · Faith-Based Life Coach</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<style>
+:root{
+  --bg:#f8f5f4;--bg-warm:#f2ebe8;--bg-section:#ebe0dc;--white:#ffffff;
+  --deep:#4a3a2e;--mid:#b87a5a;--soft:#d09a7a;--pale:#e8c8b8;
+  --wash:rgba(184,122,90,.08);--gold:#c4922a;--gold-pale:#f0e0c0;
+  --text:#3a2e28;--text-mid:#8a6a5a;--text-light:#aa9a8a;
+  --border:#ddd4d0;--border-lt:#ede4e0;
+  --serif:'Cormorant Garamond',serif;--sans:'Jost',sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+body{max-width:1440px;width:100%;margin:0 auto;background:var(--bg);color:var(--text);font-family:var(--sans);font-weight:300;-webkit-font-smoothing:antialiased;}
+
+/* Typography */
+.lbl{display:inline-flex;align-items:center;gap:10px;font-size:10px;font-weight:600;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold);}
+.lbl::before{content:'';width:16px;height:1.5px;background:var(--gold);display:block;}
+.lbl-m{display:inline-flex;align-items:center;gap:10px;font-size:10px;font-weight:600;letter-spacing:2.5px;text-transform:uppercase;color:var(--mid);}
+.lbl-m::before{content:'';width:16px;height:1.5px;background:var(--soft);display:block;}
+.lbl-lt{display:inline-flex;align-items:center;gap:10px;font-size:10px;font-weight:600;letter-spacing:2.5px;text-transform:uppercase;color:rgba(255,255,255,.5);}
+.lbl-lt::before{content:'';width:16px;height:1.5px;background:rgba(255,255,255,.3);display:block;}
+.h1{font-family:var(--serif);font-size:72px;font-weight:300;line-height:1;color:var(--deep);}
+.h1 em{font-style:italic;color:var(--mid);}
+.h2{font-family:var(--serif);font-size:48px;font-weight:300;line-height:1.1;color:var(--deep);}
+.h2 em{font-style:italic;color:var(--mid);}
+.h2-lt{font-family:var(--serif);font-size:48px;font-weight:300;line-height:1.1;color:#fff;}
+.h2-lt em{font-style:italic;color:var(--pale);}
+.body{font-family:var(--sans);font-size:15px;font-weight:300;line-height:1.8;color:var(--text-mid);}
+.body-sm{font-family:var(--sans);font-size:13.5px;font-weight:300;line-height:1.75;color:var(--text-mid);}
+
+/* Buttons */
+.btn{display:inline-flex;align-items:center;gap:8px;font-family:var(--sans);font-size:13px;font-weight:500;padding:14px 28px;border-radius:2px;text-decoration:none;cursor:pointer;border:none;letter-spacing:.3px;}
+.btn-dark{background:var(--deep);color:#fff;}
+.btn-mid{background:var(--mid);color:#fff;}
+.btn-out{background:transparent;color:var(--deep);border:1.5px solid var(--border);}
+.btn-wh{background:#fff;color:var(--deep);}
+.btn-ghost{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.25);}
+
+/* Navigation */
+nav{width:100%;height:68px;background:var(--white);border-bottom:1px solid var(--border-lt);display:flex;align-items:center;}
+.nav-in{width:100%;padding:0 64px;display:flex;align-items:center;justify-content:space-between;}
+.nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none;}
+.nav-mark{width:32px;height:32px;background:var(--deep);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:serif;font-size:14px;color:var(--gold);}
+.nav-name{font-family:var(--serif);font-size:18px;font-weight:300;color:var(--deep);}
+.nav-name em{font-style:italic;color:var(--mid);}
+.nav-links{display:flex;align-items:center;gap:28px;list-style:none;}
+.nav-links a{font-size:13px;color:var(--text-mid);text-decoration:none;}
+.nav-links a.active{color:var(--deep);font-weight:500;}
+.nav-cta{background:var(--deep)!important;color:#fff!important;padding:10px 20px;border-radius:2px;font-weight:500!important;font-size:12px!important;}
+
+/* Hero Section - New Design */
+.hero{width:100%;background:var(--white);padding:80px 64px 60px;display:grid;grid-template-columns:1fr 520px;gap:60px;align-items:start;}
+.hero-content{max-width:600px;}
+.hero-h1{font-family:var(--serif);font-size:64px;font-weight:300;line-height:.95;color:var(--deep);margin-bottom:8px;}
+.hero-h1 em{font-style:italic;color:var(--mid);}
+.hero-sub{font-family:var(--serif);font-style:italic;font-size:28px;color:var(--text-light);margin-bottom:28px;}
+.hero-verse{display:flex;align-items:flex-start;gap:12px;margin-bottom:24px;padding:16px 0;}
+.hero-verse-bar{width:2px;min-height:40px;background:var(--gold);opacity:.5;flex-shrink:0;margin-top:2px;}
+.hero-verse-text{font-family:var(--serif);font-style:italic;font-size:14px;color:var(--text-mid);line-height:1.6;}
+.hero-desc{font-size:14px;color:var(--text-mid);line-height:1.75;margin-bottom:28px;max-width:480px;}
+.hero-btns{display:flex;gap:12px;}
+.hero-img{background:var(--mid);border-radius:4px;aspect-ratio:1/1.1;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:12px;position:relative;overflow:hidden;box-shadow:20px 20px 0 var(--pale),0 36px 72px rgba(0,0,0,.14);}
+.hero-img::before{content:'';position:absolute;inset:0;background:linear-gradient(160deg,rgba(74,58,46,.12) 0%,transparent 45%,rgba(74,58,46,.52) 100%);z-index:1;pointer-events:none;}
+.hero-img-icon{font-size:48px;color:rgba(255,255,255,.15);}
+.hero-img-label{font-family:var(--serif);font-style:italic;font-size:12px;color:rgba(255,255,255,.35);}
+
+/* Stats Row */
+.stats-row{width:100%;background:var(--white);padding:0 64px 60px;display:flex;gap:40px;}
+.stat-box{display:flex;align-items:baseline;gap:8px;}
+.stat-n{font-family:var(--serif);font-size:36px;font-weight:300;color:var(--deep);}
+.stat-n sup{font-size:.5em;color:var(--mid);}
+.stat-l{font-size:10px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--text-light);}
+
+/* Pillars Bar */
+.pillars{width:100%;background:var(--bg);border-top:1px solid var(--border);border-bottom:1px solid var(--border);display:grid;grid-template-columns:repeat(4,1fr);}
+.pillar{padding:32px 28px;border-right:1px solid var(--border-lt);position:relative;}
+.pillar:last-child{border-right:none;}
+.pillar::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--pale);}
+.p-icon{font-size:18px;margin-bottom:12px;}
+.p-title{font-family:var(--serif);font-size:17px;font-weight:400;color:var(--deep);margin-bottom:8px;}
+.p-body{font-size:12.5px;line-height:1.7;color:var(--text-mid);}
+
+/* About Section - Scripture Left, Content Right */
+.about{width:100%;background:var(--bg-warm);padding:80px 64px;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;}
+.about-left{}
+.scripture-box{background:var(--deep);border-radius:4px;padding:36px 32px;position:relative;overflow:hidden;margin-bottom:20px;}
+.scripture-box::before{content:'"';position:absolute;top:-16px;left:8px;font-family:var(--serif);font-size:140px;color:rgba(255,255,255,.03);line-height:1;}
+.sc-ey{font-size:9px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--gold);opacity:.7;margin-bottom:14px;display:flex;align-items:center;gap:6px;}
+.sc-ey::before{content:'✝';font-size:10px;}
+.sc-text{font-family:var(--serif);font-style:italic;font-size:18px;font-weight:300;color:#fff;line-height:1.5;margin-bottom:10px;position:relative;z-index:1;}
+.sc-ref{font-size:9px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold);opacity:.5;}
+.chips-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+.chip{background:var(--white);border:1px solid var(--border);border-radius:3px;padding:14px 16px;}
+.chip-n{font-family:var(--serif);font-size:24px;font-weight:300;color:var(--deep);line-height:1;}
+.chip-n sup{font-size:.5em;color:var(--gold);}
+.chip-l{font-size:9px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--text-light);margin-top:3px;}
+.about-right{}
+.about-title{margin-bottom:20px;}
+.pull-quote{margin:20px 0;padding:18px 22px;background:var(--white);border-left:3px solid var(--gold);border-radius:0 3px 3px 0;}
+.pull-quote p{font-family:var(--serif);font-style:italic;font-size:16px;color:var(--deep);line-height:1.55;}
+.about-sig{font-family:var(--serif);font-style:italic;font-size:22px;color:var(--mid);margin:20px 0;}
+
+/* Programs Section - Dark */
+.programs{width:100%;background:var(--deep);padding:80px 64px;position:relative;overflow:hidden;}
+.programs::before{content:'';position:absolute;bottom:-40px;right:-40px;font-family:var(--serif);font-style:italic;font-size:200px;font-weight:300;color:rgba(255,255,255,.02);line-height:1;pointer-events:none;}
+.programs-header{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:48px;}
+.programs-header-left{}
+.programs-header-right{max-width:280px;text-align:right;}
+.programs-header-right p{font-size:13px;color:rgba(255,255,255,.35);line-height:1.7;margin-bottom:14px;}
+.programs-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(255,255,255,.06);}
+.prog-card{background:var(--deep);padding:40px 36px;display:flex;flex-direction:column;position:relative;}
+.prog-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;}
+.prog-card:nth-child(1)::before{background:var(--gold);}
+.prog-card:nth-child(2)::before{background:var(--mid);}
+.prog-card:nth-child(3)::before{background:var(--pale);}
+.prog-n{font-family:var(--serif);font-size:64px;font-weight:300;color:rgba(255,255,255,.04);line-height:1;margin-bottom:16px;}
+.prog-icon{width:40px;height:40px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:18px;margin-bottom:20px;}
+.prog-title{font-family:var(--serif);font-size:22px;font-weight:300;color:#fff;line-height:1.2;margin-bottom:12px;}
+.prog-desc{font-size:13px;line-height:1.75;color:rgba(255,255,255,.38);flex:1;margin-bottom:24px;}
+.prog-link{font-size:11px;font-weight:600;letter-spacing:.3px;text-decoration:none;color:var(--gold);}
+.prog-card:nth-child(2) .prog-link{color:var(--soft);}
+.prog-card:nth-child(3) .prog-link{color:var(--pale);}
+
+/* Path Section */
+.path{width:100%;background:var(--white);padding:80px 64px;}
+.path-header{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:48px;}
+.path-header-left{}
+.path-header-right{max-width:320px;}
+.path-header-right p{font-size:14px;color:var(--text-mid);line-height:1.75;margin-bottom:16px;}
+.path-grid{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--border);}
+.path-step{padding:40px 32px;border-right:1px solid var(--border-lt);position:relative;background:var(--bg);}
+.path-step:last-child{border-right:none;}
+.path-step::before{content:'';position:absolute;top:0;left:32px;width:28px;height:2px;background:var(--soft);}
+.step-n{font-family:var(--serif);font-size:72px;font-weight:300;color:var(--pale);line-height:1;margin-bottom:12px;}
+.step-cross{position:absolute;top:24px;right:24px;font-size:14px;color:var(--pale);font-family:serif;}
+.step-title{font-family:var(--serif);font-size:18px;font-weight:400;color:var(--deep);line-height:1.25;margin-bottom:12px;}
+.step-title em{font-style:italic;color:var(--mid);}
+.step-body{font-size:12.5px;line-height:1.7;color:var(--text-mid);}
+
+/* Testimonials */
+.testimonials{width:100%;background:var(--bg-warm);padding:80px 64px;}
+.test-header{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:48px;}
+.test-header-left{}
+.test-header-right{display:flex;flex-direction:column;gap:14px;align-items:flex-end;}
+.rating-pill{display:inline-flex;align-items:center;gap:14px;background:var(--white);border:1px solid var(--border);border-radius:2px;padding:12px 20px;}
+.r-n{font-family:var(--serif);font-size:26px;font-weight:300;color:var(--deep);line-height:1;}
+.r-stars{font-size:12px;color:var(--gold);letter-spacing:1px;}
+.r-lbl{font-size:9px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--text-light);margin-top:2px;}
+.test-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:1px;background:var(--border);}
+.tcard{background:var(--white);padding:36px 32px;display:flex;flex-direction:column;gap:16px;}
+.tcard.dark{background:var(--deep);}
+.tcard-qm{font-family:var(--serif);font-size:48px;color:var(--pale);line-height:.6;opacity:.5;}
+.tcard.dark .tcard-qm{color:rgba(255,255,255,.08);opacity:1;}
+.tcard-text{font-family:var(--serif);font-style:italic;font-size:15px;line-height:1.7;color:var(--deep);flex:1;}
+.tcard.dark .tcard-text{color:#fff;}
+.tcard-hr{height:1px;background:var(--border-lt);}
+.tcard.dark .tcard-hr{background:rgba(255,255,255,.08);}
+.tcard-person{display:flex;align-items:center;gap:12px;}
+.tcard-init{width:38px;height:38px;border-radius:2px;background:var(--bg);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:16px;color:var(--text-mid);flex-shrink:0;}
+.tcard.dark .tcard-init{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.1);color:rgba(255,255,255,.4);}
+.tcard-name{font-size:13px;font-weight:500;color:var(--deep);}
+.tcard.dark .tcard-name{color:#fff;}
+.tcard-role{font-size:11px;color:var(--text-light);margin-top:1px;}
+.tcard.dark .tcard-role{color:rgba(255,255,255,.35);}
+.tcard-stars{color:var(--gold);font-size:11px;letter-spacing:1px;margin-top:2px;}
+
+/* CTA Section */
+.cta{width:100%;display:grid;grid-template-columns:1fr 1fr;min-height:480px;}
+.cta-left{background:var(--mid);padding:72px 64px;display:flex;flex-direction:column;justify-content:center;position:relative;overflow:hidden;}
+.cta-left::before{content:'✝';position:absolute;bottom:-40px;right:-10px;font-size:240px;color:rgba(255,255,255,.04);font-family:serif;line-height:1;pointer-events:none;}
+.cta-left::after{content:'';position:absolute;top:-80px;left:-80px;width:280px;height:280px;border-radius:50%;background:rgba(0,0,0,.08);pointer-events:none;}
+.cta-h{font-family:var(--serif);font-size:44px;font-weight:300;line-height:1.05;color:#fff;margin-bottom:18px;position:relative;z-index:1;}
+.cta-h em{font-style:italic;opacity:.6;}
+.cta-sub{font-size:14px;line-height:1.75;color:rgba(255,255,255,.55);max-width:340px;margin-bottom:32px;position:relative;z-index:1;}
+.cta-btns{display:flex;gap:12px;position:relative;z-index:1;}
+.cta-right{background:var(--bg);border-left:1px solid var(--border);padding:72px 56px;display:flex;flex-direction:column;justify-content:center;gap:24px;}
+.cta-right-intro{font-family:var(--serif);font-style:italic;font-size:15px;color:var(--text-mid);}
+.checklist{list-style:none;display:flex;flex-direction:column;gap:14px;}
+.checklist li{display:flex;align-items:flex-start;gap:12px;font-size:14px;color:var(--text-mid);line-height:1.5;}
+.checklist li::before{content:'✓';width:22px;height:22px;background:var(--wash);border:1.5px solid var(--pale);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:700;color:var(--mid);flex-shrink:0;margin-top:1px;}
+.cta-note{padding:16px 18px;background:var(--white);border-radius:3px;border:1px solid var(--border);}
+.cta-note p{font-size:12.5px;color:var(--text-mid);line-height:1.65;}
+.cta-note strong{font-weight:600;color:var(--deep);}
+
+/* Footer */
+footer{width:100%;background:var(--deep);border-top:1px solid rgba(255,255,255,.04);}
+.footer-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:48px;padding:56px 64px 44px;}
+.footer-logo-row{display:flex;align-items:center;gap:10px;margin-bottom:12px;}
+.footer-mark{width:32px;height:32px;background:var(--mid);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:serif;font-size:13px;color:var(--gold);}
+.footer-name{font-family:var(--serif);font-size:18px;font-weight:300;color:#fff;}
+.footer-name em{font-style:italic;color:var(--pale);}
+.footer-tag{font-size:12.5px;color:rgba(255,255,255,.3);line-height:1.7;max-width:220px;margin-bottom:20px;}
+.footer-verse{padding:12px 14px;border-left:2px solid rgba(255,255,255,.1);}
+.footer-verse p{font-family:var(--serif);font-style:italic;font-size:12px;color:rgba(255,255,255,.28);line-height:1.6;}
+.fcol-hd{font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.2);margin-bottom:16px;}
+.flinks{list-style:none;display:flex;flex-direction:column;gap:10px;}
+.flinks a{font-size:13px;color:rgba(255,255,255,.42);text-decoration:none;}
+.footer-bot{padding:18px 64px;border-top:1px solid rgba(255,255,255,.05);display:flex;justify-content:space-between;align-items:center;}
+.footer-bot p{font-size:11px;color:rgba(255,255,255,.2);}
+.footer-powered{font-size:11px;color:rgba(255,255,255,.15);}
+.footer-powered strong{color:rgba(255,255,255,.35);font-weight:500;}
+
+/* ================================================
+   MOBILE RESPONSIVE — all rachel pages
+   Breakpoints: 900px (tablet) | 540px (phone)
+   ================================================ */
+
+/* ── Tablet: ≤ 900px ─────────────────────────── */
+@media(max-width:900px){
+
+  /* ── Body & shared layout ── */
+  body{overflow-x:hidden;}
+
+  /* ── Navigation ── */
+  nav{width:100%!important;}
+  .nav-in{padding:0 24px;}
+  .nav-links{display:none;}
+
+  /* ── Hero (all pages with a hero section) ── */
+  .hero{
+    grid-template-columns:1fr!important;
+    padding:48px 24px 36px!important;
+    gap:32px!important;
+    width:100%!important;
+  }
+  .hero-content{max-width:100%;}
+  .hero-h1{font-size:46px!important;}
+  .hero-sub{font-size:22px!important;}
+  .hero-img{
+    aspect-ratio:16/9!important;
+    box-shadow:10px 10px 0 var(--pale),0 20px 40px rgba(0,0,0,.12)!important;
+  }
+  .hero-btns{flex-wrap:wrap;}
+
+  /* ── Stats row ── */
+  .stats-row{
+    width:100%!important;
+    padding:0 24px 40px!important;
+    flex-wrap:wrap;
+    gap:20px!important;
+  }
+
+  /* ── Pillars (4-col → 2-col) ── */
+  .pillars{
+    width:100%!important;
+    grid-template-columns:repeat(2,1fr)!important;
+  }
+
+  /* ── About / scripture left + content right ── */
+  .about{
+    width:100%!important;
+    grid-template-columns:1fr!important;
+    padding:60px 24px!important;
+    gap:40px!important;
+  }
+
+  /* ── Programs dark section ── */
+  .programs{width:100%!important;padding:60px 24px!important;}
+  .programs-header{
+    flex-direction:column!important;
+    gap:20px!important;
+    align-items:flex-start!important;
+    margin-bottom:32px!important;
+  }
+  .programs-header-right{max-width:100%!important;text-align:left!important;}
+  .programs-grid{grid-template-columns:1fr!important;gap:0!important;}
+  .prog-card{padding:32px 24px!important;}
+
+  /* ── Path section (4-col → 2-col) ── */
+  .path{width:100%!important;padding:60px 24px!important;}
+  .path-header{
+    flex-direction:column!important;
+    gap:20px!important;
+    align-items:flex-start!important;
+    margin-bottom:32px!important;
+  }
+  .path-header-right{max-width:100%!important;}
+  .path-grid{grid-template-columns:repeat(2,1fr)!important;}
+
+  /* ── Testimonials strip ── */
+  .testimonials{width:100%!important;padding:60px 24px!important;}
+  .test-header{
+    flex-direction:column!important;
+    gap:20px!important;
+    align-items:flex-start!important;
+  }
+  .test-header-right{align-items:flex-start!important;}
+  .test-grid{grid-template-columns:1fr!important;gap:0!important;}
+
+  /* ── CTA split ── */
+  .cta{width:100%!important;grid-template-columns:1fr!important;}
+  .cta-left{padding:56px 24px!important;}
+  .cta-right{
+    padding:48px 24px!important;
+    border-left:none!important;
+    border-top:1px solid var(--border)!important;
+  }
+  .cta-h{font-size:36px!important;}
+
+  /* ── Footer ── */
+  footer{width:100%!important;}
+  .footer-grid{
+    grid-template-columns:repeat(2,1fr)!important;
+    padding:40px 24px 32px!important;
+    gap:32px!important;
+  }
+  .footer-bot{
+    padding:16px 24px!important;
+    flex-direction:column!important;
+    gap:8px!important;
+    text-align:center!important;
+  }
+
+  /* ══ PAGE-SPECIFIC ══════════════════════════ */
+
+  /* ── About page: values-grid (3-col → 2-col), creds-grid (4-col → 2-col) ── */
+  .values-grid{grid-template-columns:repeat(2,1fr)!important;}
+  .value-card{padding:28px 20px!important;}
+  .creds-grid{grid-template-columns:repeat(2,1fr)!important;}
+  .cred-item{padding:28px 20px!important;}
+
+  /* ── Work-with-me: compare table scroll ── */
+  .compare{width:100%!important;padding:60px 24px!important;overflow-x:auto;}
+  .compare-table{min-width:560px;}
+
+  /* ── VSL page ── */
+  .vsl-hero{
+    width:100%!important;
+    padding:60px 24px 36px!important;
+  }
+  .vsl-box{
+    width:100%!important;
+    max-width:100%!important;
+    padding:0!important;
+  }
+  .learn{width:100%!important;padding:60px 24px!important;}
+  .learn-grid{grid-template-columns:repeat(2,1fr)!important;gap:0!important;}
+  .learn-item{padding:28px 20px!important;}
+  .about-coach{
+    width:100%!important;
+    grid-template-columns:1fr!important;
+    padding:60px 24px!important;
+    gap:40px!important;
+  }
+  .coach-img{width:100%!important;aspect-ratio:4/3!important;max-height:380px!important;}
+
+  /* ── Book page ── */
+  .book-section{
+    width:100%!important;
+    grid-template-columns:1fr!important;
+    padding:60px 24px!important;
+    gap:40px!important;
+  }
+  .book-embed{min-height:400px!important;}
+  .expect{width:100%!important;padding:60px 24px!important;}
+  .expect-grid{grid-template-columns:repeat(2,1fr)!important;gap:0!important;}
+  .expect-item{padding:28px 20px!important;}
+
+  /* ── FAQ page: sidebar stacks above content ── */
+  .faq-section{
+    width:100%!important;
+    grid-template-columns:1fr!important;
+    padding:60px 24px!important;
+    gap:32px!important;
+  }
+  .faq-sidebar{position:static!important;top:auto!important;}
+
+  /* ── Testimonials page: featured card ── */
+  .featured{width:100%!important;padding:60px 24px!important;}
+  .featured-card{
+    grid-template-columns:1fr!important;
+    gap:32px!important;
+  }
+  .fc-img{max-height:360px!important;}
+
+  /* ── Contact page ── */
+  .contact-section{
+    width:100%!important;
+    grid-template-columns:1fr!important;
+    padding:60px 24px!important;
+    gap:40px!important;
+  }
+  .form-box{padding:32px 24px!important;}
+  .ways{width:100%!important;padding:60px 24px!important;}
+  .ways-grid{grid-template-columns:repeat(2,1fr)!important;gap:0!important;}
+  .way-item{padding:28px 20px!important;}
+
+  /* ── Legal page: sticky sidebar stacks above content ── */
+  .legal-section{
+    width:100%!important;
+    grid-template-columns:1fr!important;
+    padding:60px 24px!important;
+    gap:32px!important;
+  }
+  .legal-sidebar{position:static!important;top:auto!important;}
+  .legal-content{padding:32px 24px!important;}
+
+  /* ── Typography scale-down ── */
+  .h2,.h2-lt{font-size:38px!important;}
+  .h1{font-size:46px!important;}
+}
+
+/* ── Phone: ≤ 540px ──────────────────────────── */
+@media(max-width:540px){
+
+  /* ── Navigation ── */
+  .nav-in{padding:0 16px!important;}
+
+  /* ── Hero ── */
+  .hero{padding:32px 16px 28px!important;}
+  .hero-h1{font-size:34px!important;line-height:1.05!important;}
+  .hero-sub{font-size:18px!important;}
+  .hero-desc{font-size:13px!important;}
+  .hero-btns{flex-direction:column!important;gap:10px!important;}
+  .hero-btns .btn{width:100%!important;justify-content:center!important;}
+  .hero-img{
+    aspect-ratio:4/3!important;
+    box-shadow:8px 8px 0 var(--pale),0 16px 32px rgba(0,0,0,.12)!important;
+  }
+
+  /* ── Stats ── */
+  .stats-row{padding:0 16px 28px!important;}
+
+  /* ── Pillars → 1 col ── */
+  .pillars{grid-template-columns:1fr!important;}
+  .pillar{padding:20px 16px!important;border-right:none!important;border-bottom:1px solid var(--border-lt)!important;}
+
+  /* ── About ── */
+  .about{padding:40px 16px!important;}
+  .chips-grid{grid-template-columns:1fr 1fr!important;}
+
+  /* ── Programs ── */
+  .programs{padding:40px 16px!important;}
+  .prog-card{padding:24px 16px!important;}
+
+  /* ── Path → 1 col ── */
+  .path{padding:40px 16px!important;}
+  .path-grid{grid-template-columns:1fr!important;}
+  .path-step{
+    padding:24px 16px!important;
+    border-right:none!important;
+    border-bottom:1px solid var(--border-lt)!important;
+  }
+
+  /* ── Testimonials ── */
+  .testimonials{padding:40px 16px!important;}
+  .tcard{padding:24px 16px!important;}
+
+  /* ── CTA ── */
+  .cta-left,.cta-right{padding:36px 16px!important;}
+  .cta-h{font-size:26px!important;}
+  .cta-btns{flex-direction:column!important;gap:10px!important;}
+  .cta-btns .btn{width:100%!important;justify-content:center!important;}
+
+  /* ── Footer → 1 col ── */
+  .footer-grid{grid-template-columns:1fr!important;padding:28px 16px 20px!important;}
+  .footer-bot{padding:12px 16px!important;}
+
+  /* ── Typography ── */
+  .h2,.h2-lt{font-size:28px!important;}
+  .h1{font-size:32px!important;}
+  .hero-h1{font-size:28px!important;}
+
+  /* ── About page ── */
+  .values-grid{grid-template-columns:1fr!important;}
+  .value-card{padding:20px 16px!important;}
+  .creds-grid{grid-template-columns:1fr 1fr!important;}
+  .cred-item{padding:20px 16px!important;}
+
+  /* ── VSL page ── */
+  .vsl-hero{padding:40px 16px 28px!important;}
+  .learn{padding:40px 16px!important;}
+  .learn-grid{grid-template-columns:1fr!important;}
+  .about-coach{padding:40px 16px!important;}
+
+  /* ── Book page ── */
+  .book-section{padding:40px 16px!important;}
+  .expect{padding:40px 16px!important;}
+  .expect-grid{grid-template-columns:1fr!important;}
+  .expect-item{padding:20px 16px!important;}
+
+  /* ── FAQ page ── */
+  .faq-section{padding:40px 16px!important;}
+  .faq-q{padding:18px 16px!important;}
+  .faq-a{padding:0 16px 18px!important;}
+
+  /* ── Testimonials page ── */
+  .featured{padding:40px 16px!important;}
+  .fc-img{max-height:260px!important;}
+
+  /* ── Contact page ── */
+  .contact-section{padding:40px 16px!important;}
+  .form-box{padding:24px 16px!important;}
+  .ways{padding:40px 16px!important;}
+  .ways-grid{grid-template-columns:1fr!important;}
+  .way-item{padding:20px 16px!important;}
+
+  /* ── Legal page ── */
+  .legal-section{padding:40px 16px!important;}
+  .legal-content{padding:24px 16px!important;}
+}
+</style>
+</head>
+<body>
+
+<!-- Navigation -->
+<nav>
+  <div class="nav-in">
+    <a class="nav-logo" href="index.html">
+      <div class="nav-mark" style="overflow:hidden;padding:0;"><img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&h=400&fit=crop&q=80" style="width:100%;height:100%;object-fit:cover;object-position:top center;border-radius:50%;display:block;"></div>
+      <div class="nav-name">Rachel <em>Whitmore</em></div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="work-with-me.html">Work With Me</a></li>
+      <li><a href="vsl.html">Free Training</a></li>
+      <li><a href="testimonials.html">Stories</a></li>
+      <li><a href="faq.html">FAQ</a></li>
+      <li><a href="book.html" class="nav-cta">Book a Session</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- Hero Section -->
+<section class="hero">
+  <div class="hero-content">
+    <div class="lbl" style="margin-bottom:24px;">Faith-Based Life Coach</div>
+    <h1 class="hero-h1">You Were Never<br>Meant to <em>Earn</em><br>His Love.</h1>
+    <p class="hero-sub">Come home to yourself — and to the tender Father who was always waiting.</p>
+    <div class="hero-verse">
+      <div class="hero-verse-bar"></div>
+      <p class="hero-verse-text">"You will know the truth, and the truth will set you free."<br><span style="font-style:normal;font-family:var(--sans);font-size:9px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold);margin-top:6px;display:inline-block;">— John 8:32</span></p>
+    </div>
+    <p class="hero-desc">For the exhausted Christian woman who serves faithfully, loves everyone around her, and still can't shake the feeling that she's never quite enough. You're not broken. You're not failing. You've been caught in a performance trap that the gospel was always meant to free you from — and there is a way out.</p>
+    <div class="hero-btns">
+      <a href="book.html" class="btn btn-mid">Book a Free Call</a>
+      <a href="about.html" class="btn btn-out">Read My Story</a>
+    </div>
+  </div>
+  <div class="hero-img">
+    <img src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=900&h=1000&fit=crop&q=80" alt="Rachel Whitmore" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;object-position:top center;">
+  </div>
+</section>
+
+<!-- Stats Row -->
+<section class="stats-row">
+  <div class="stat-box">
+    <div class="stat-n">200<sup>+</sup></div>
+    <div class="stat-l">Women Served</div>
+  </div>
+  <div class="stat-box">
+    <div class="stat-n">5.0<sup>★</sup></div>
+    <div class="stat-l">Average Rating</div>
+  </div>
+  <div class="stat-box">
+    <div class="stat-n">7</div>
+    <div class="stat-l">Years of Ministry</div>
+  </div>
+  <div class="stat-box">
+    <div class="stat-n">12<sup>wk</sup></div>
+    <div class="stat-l">Core Transformation</div>
+  </div>
+</section>
+
+<!-- Pillars -->
+<section class="pillars">
+  <div class="pillar">
+    <div class="p-icon">🕊</div>
+    <div class="p-title">Grace-Rooted Faith</div>
+    <p class="p-body">Scripture-anchored work that moves beyond correct theology into a felt, embodied encounter with the Father-heart of God.</p>
+  </div>
+  <div class="pillar">
+    <div class="p-icon">🌿</div>
+    <div class="p-title">Nervous System Healing</div>
+    <p class="p-body">Somatic and IFS tools to restore safety in a body that has been running on high-alert performance for years.</p>
+  </div>
+  <div class="pillar">
+    <div class="p-icon">🤝</div>
+    <div class="p-title">Inner Child Work</div>
+    <p class="p-body">Tenderly meeting the parts of you that learned early that love had to be earned — and showing them the truth of who God really is.</p>
+  </div>
+  <div class="pillar">
+    <div class="p-icon">✨</div>
+    <div class="p-title">Whole-Life Freedom</div>
+    <p class="p-body">Real transformation that reaches your marriage, your mothering, your ministry, and your quiet moments alone with yourself.</p>
+  </div>
+</section>
+
+<!-- About Section -->
+<section class="about">
+  <div class="about-left">
+    <div class="scripture-box">
+      <div class="sc-ey">Scripture</div>
+      <p class="sc-text">"For I know the plans I have for you — plans to prosper you and not to harm you, plans to give you hope and a future."</p>
+      <p class="sc-ref">— Jeremiah 29:11</p>
+    </div>
+    <div class="chips-grid">
+      <div class="chip">
+        <div class="chip-n">200<sup>+</sup></div>
+        <div class="chip-l">Women Coached</div>
+      </div>
+      <div class="chip">
+        <div class="chip-n">12<sup>wk</sup></div>
+        <div class="chip-l">Core Program</div>
+      </div>
+      <div class="chip">
+        <div class="chip-n">5.0<sup>★</sup></div>
+        <div class="chip-l">Client Rating</div>
+      </div>
+      <div class="chip">
+        <div class="chip-n">7</div>
+        <div class="chip-l">Years Experience</div>
+      </div>
+    </div>
+  </div>
+  <div class="about-right">
+    <div class="lbl-m" style="margin-bottom:18px;">My Story</div>
+    <h2 class="h2 about-title">I Was the Woman Who<br>Had It All Together —<br><em>and Was Disappearing.</em></h2>
+    <div class="pull-quote">
+      <p>I sat on my pantry floor and cried for an hour while my children played just three feet away. That was the moment I finally admitted the truth: all the performing had stopped working. That afternoon changed everything.</p>
+    </div>
+    <p class="body" style="margin-bottom:20px;">I grew up the pastor's daughter who learned early that love was something you earned through achievement. Good grades, worship team, never needing anything — I perfected the performance. I genuinely loved Jesus. But by my early thirties, married with two kids, I was breaking. Angry at the wrong moments. Numb in my marriage. Reading my Bible and feeling absolutely nothing. My life looked beautiful from the outside. Inside, I was slowly disappearing. It took a pandemic, a courageous therapist, and a God who turned out to be far more tender than I had ever been taught — to finally bring me home to myself. I've spent the years since doing the deep work: inner child healing, IFS, nervous system restoration, attachment theory, and a total re-encounter with the grace-rooted gospel. And now I can't keep it to myself.</p>
+    <div class="about-sig">— Rachel</div>
+    <a href="about.html" class="btn btn-dark">Read My Full Story</a>
+  </div>
+</section>
+
+<!-- Programs Section -->
+<section class="programs">
+  <div class="programs-header">
+    <div class="programs-header-left">
+      <div class="lbl-lt" style="margin-bottom:16px;">Work With Me</div>
+      <h2 class="h2-lt">Programs Built<br>for <em>Real</em> Becoming.</h2>
+    </div>
+    <div class="programs-header-right">
+      <p>Every offering is grounded in biblical truth, proven healing methodology, and a deep belief that you were made for so much more than exhausted survival.</p>
+      <a href="work-with-me.html" class="btn btn-ghost" style="font-size:12px;padding:10px 18px;">See All Programs</a>
+    </div>
+  </div>
+  <div class="programs-grid">
+    <div class="prog-card">
+      <div class="prog-n">01</div>
+      <div class="prog-icon">🕊</div>
+      <div class="prog-title">Rooted: 12-Week 1:1 Coaching</div>
+      <p class="prog-desc">A deep, intimate 12-week container for the exhausted Christian woman who is done performing and ready to start becoming. Weekly 60-minute Zoom sessions, voice memo support between calls, and custom scripture reflection prompts — walking slowly through nervous system healing, inner child work, grace-based theology, and real-life integration. This is the unhurried, honest work that changes you at the root.</p>
+      <a href="work-with-me.html" class="prog-link">Apply Now →</a>
+    </div>
+    <div class="prog-card">
+      <div class="prog-n">02</div>
+      <div class="prog-icon">🔥</div>
+      <div class="prog-title">The Rooted Mother: Small Group</div>
+      <p class="prog-desc">A small, carefully held cohort of women walking this journey together — mothers who are exhausted, ministry-worn, and ready to come home to themselves. Everything the 1:1 container holds, carried in the warmth of community with women who understand exactly where you are. If the thought of doing this alone feels like too much, this is your people. Waitlist forming now.</p>
+      <a href="work-with-me.html" class="prog-link">Join Waitlist →</a>
+    </div>
+    <div class="prog-card">
+      <div class="prog-n">03</div>
+      <div class="prog-icon">🎥</div>
+      <div class="prog-title">Free Training: The Performance Trap</div>
+      <p class="prog-desc">A free, no-strings video training for the Christian woman who knows something is deeply off but hasn't yet been able to name it. In sixty minutes, I walk through exactly how the performance trap forms in childhood, how it hijacks your faith and your relationships, and what a genuinely different way of living looks like. No email required. No pitch. No pressure. Just the truth you've been waiting for.</p>
+      <a href="vsl.html" class="prog-link">Watch Free Now →</a>
+    </div>
+  </div>
+</section>
+
+<!-- Path Section -->
+<section class="path">
+  <div class="path-header">
+    <div class="path-header-left">
+      <div class="lbl-m" style="margin-bottom:16px;">The Journey</div>
+      <h2 class="h2">Your Path<br>to <em>Coming Home.</em></h2>
+    </div>
+    <div class="path-header-right">
+      <p class="body">Four honest phases of transformation — unhurried, rooted in truth, guided by the Spirit into the life you were always created to live from the inside out.</p>
+      <a href="book.html" class="btn btn-dark" style="align-self:flex-start;">Book a Free Call</a>
+    </div>
+  </div>
+  <div class="path-grid">
+    <div class="path-step">
+      <div class="step-n">01</div>
+      <span class="step-cross">✝</span>
+      <div class="step-title"><em>Slow</em><br>Down First</div>
+      <p class="step-body">We create space to see what's actually running beneath the surface — the core beliefs, childhood wounds, and protective patterns that have been quietly driving your exhaustion.</p>
+    </div>
+    <div class="path-step">
+      <div class="step-n">02</div>
+      <span class="step-cross">✝</span>
+      <div class="step-title"><em>See</em><br>the Story</div>
+      <p class="step-body">Using IFS, inner child work, and attachment-based tools anchored in scripture — we go beneath behavior into the actual wounds where lasting change lives.</p>
+    </div>
+    <div class="path-step">
+      <div class="step-n">03</div>
+      <span class="step-cross">✝</span>
+      <div class="step-title"><em>Meet</em><br>the Real Father</div>
+      <p class="step-body">A genuine, felt encounter with the God that performance never let you actually know — the tender, delighted, utterly safe Father who was always for you, not merely tolerating you.</p>
+    </div>
+    <div class="path-step">
+      <div class="step-n">04</div>
+      <span class="step-cross">✝</span>
+      <div class="step-title"><em>Integrate</em><br>Into Real Life</div>
+      <p class="step-body">Freedom isn't a feeling — it's a way of being. We build the daily anchors and honest practices that make your healing real in your marriage, your mothering, your whole life.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Testimonials -->
+<section class="testimonials">
+  <div class="test-header">
+    <div class="test-header-left">
+      <div class="lbl-m" style="margin-bottom:16px;">Stories of Transformation</div>
+      <h2 class="h2">Women Who<br><em>Came Alive.</em></h2>
+    </div>
+    <div class="test-header-right">
+      <p class="body" style="text-align:right;">Real women. Real breakthroughs. No testimonials were edited or incentivised — these are their words, unchanged.</p>
+      <div class="rating-pill">
+        <div class="r-n">5.0</div>
+        <div>
+          <div class="r-stars">★★★★★</div>
+          <div class="r-lbl">Average Rating</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="test-grid">
+    <div class="tcard dark">
+      <div class="tcard-qm">"</div>
+      <p class="tcard-text">I was the one everyone counted on — mom of three, deacon's wife, quietly binging wine at night just to get through the day. Rachel walked with me through six months of the hardest and most freeing work of my life. I named my anxious attachment out loud for the first time. I told my husband what I actually needed. I feel like a person again. I genuinely haven't felt like a person in a decade.</p>
+      <div class="tcard-hr"></div>
+      <div class="tcard-person">
+        <div class="tcard-init">A</div>
+        <div>
+          <div class="tcard-name">Ashley M.</div>
+          <div class="tcard-role">Mom of Three · Charlotte, NC</div>
+          <div class="tcard-stars">★★★★★</div>
+        </div>
+      </div>
+    </div>
+    <div class="tcard">
+      <div class="tcard-qm">"</div>
+      <p class="tcard-text">I came to Rachel postpartum and spiraling — genuinely convinced God was punishing me for something. We did nervous system work, attachment healing, and she helped me encounter a version of God I had never actually met before. For the first time in my life, I believe He is truly for me. Not just tolerating me. That shift has changed everything.</p>
+      <div class="tcard-hr"></div>
+      <div class="tcard-person">
+        <div class="tcard-init">B</div>
+        <div>
+          <div class="tcard-name">Brooke T.</div>
+          <div class="tcard-role">New Mom · Nashville, TN</div>
+          <div class="tcard-stars">★★★★★</div>
+        </div>
+      </div>
+    </div>
+    <div class="tcard">
+      <div class="tcard-qm">"</div>
+      <p class="tcard-text">I had been living in low-grade shame for twenty years. As a pastor's wife, I didn't even have language for what was wrong. Rachel gave me that language — and so much more. I used to wake up feeling like I owed God my day. Now I wake up and I genuinely feel like my Father is happy I'm awake. That is a miracle I did not expect.</p>
+      <div class="tcard-hr"></div>
+      <div class="tcard-person">
+        <div class="tcard-init">M</div>
+        <div>
+          <div class="tcard-name">Megan R.</div>
+          <div class="tcard-role">Pastor's Wife · Dallas, TX</div>
+          <div class="tcard-stars">★★★★★</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA Section -->
+<section class="cta">
+  <div class="cta-left">
+    <div class="lbl-lt" style="margin-bottom:18px;">Your Next Step</div>
+    <h2 class="cta-h">You Don't Have<br>to Do This <em>Alone.</em></h2>
+    <p class="cta-sub">A free 45-minute conversation — unhurried, honest, and completely without pressure. Just space to talk about where you are, what you're carrying, and what a different way might look like for you.</p>
+    <div class="cta-btns">
+      <a href="book.html" class="btn btn-wh">Book a Free Call</a>
+      <a href="about.html" class="btn btn-ghost">Read My Story</a>
+    </div>
+  </div>
+  <div class="cta-right">
+    <div class="cta-right-intro">In our call, we'll get quiet and honest about where you actually are — and what's genuinely possible for you on the other side.</div>
+    <ul class="checklist">
+      <li>What's actually keeping you stuck beneath the exhaustion and the performing</li>
+      <li>What a realistic, grace-rooted path to lasting freedom looks like for you</li>
+      <li>Which program or offering is the right fit for your season and situation</li>
+      <li>Whether we're the right coach-client match to walk this work together</li>
+    </ul>
+    <div class="cta-note">
+      <p><strong>Zero pressure. Zero obligation.</strong> If it's not the right fit, I'll tell you honestly and point you somewhere better — because your healing matters more than my business.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="footer-grid">
+    <div>
+      <div class="footer-logo-row">
+        <div class="footer-mark">✝</div>
+        <div class="footer-name">Rachel <em>Whitmore</em></div>
+      </div>
+      <p class="footer-tag">Faith-based coaching for the exhausted Christian woman who's ready to stop performing and come home to herself.</p>
+      <div class="footer-verse">
+        <p>"You will know the truth, and the truth will set you free." — John 8:32</p>
+      </div>
+    </div>
+    <div>
+      <div class="fcol-hd">Navigate</div>
+      <ul class="flinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="work-with-me.html">Work With Me</a></li>
+        <li><a href="testimonials.html">Stories</a></li>
+        <li><a href="book.html">Book a Session</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="fcol-hd">Programs</div>
+      <ul class="flinks">
+        <li><a href="work-with-me.html">1:1 Coaching</a></li>
+        <li><a href="work-with-me.html">Group Program</a></li>
+        <li><a href="work-with-me.html">Online Course</a></li>
+        <li><a href="vsl.html">Free Training</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="fcol-hd">Legal</div>
+      <ul class="flinks">
+        <li><a href="legal.html">Privacy Policy</a></li>
+        <li><a href="legal.html">Terms of Service</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bot">
+    <p>© 2026 Rachel Whitmore. All rights reserved.</p>
+    <div class="footer-powered">Powered by <strong>Alive & Free Consulting</strong></div>
+  </div>
+</footer>
+
+</body>
+</html>
